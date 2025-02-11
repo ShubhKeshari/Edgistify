@@ -58,24 +58,22 @@ npm run start
 
 ```
 
-## Usage
-
 ### Snapshot of Website
 
-### Register Page:
+#### Register Page:
 ![image](https://github.com/user-attachments/assets/cc9d0a4b-1315-47a4-8361-c4c75a936897)
 
 
-### Login Page:
+#### Login Page:
 ![image](https://github.com/user-attachments/assets/3bf1b098-0f67-40aa-bebb-2bc758c105aa)
 
-### Product Page:
+#### Product Page:
 ![image](https://github.com/user-attachments/assets/d4712c6c-cc05-4890-8503-6117efb811e1)
 
-### Orders Page
+#### Orders Page
 ![image](https://github.com/user-attachments/assets/30746317-b59f-4e94-bdee-de9e8d7321be)
 
-### Footer
+#### Footer
 ![image](https://github.com/user-attachments/assets/4377e9cb-ac5a-482b-afea-ce7061765bf7)
 
 ## Technology Stack
