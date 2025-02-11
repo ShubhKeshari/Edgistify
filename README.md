@@ -63,7 +63,8 @@ npm run start
 ### Snapshot of Website
 
 ### Register Page:
-![image](https://github.com/user-attachments/assets/7fa0d44c-62e7-40e3-8a27-3ed1c2416200)
+![image](https://github.com/user-attachments/assets/cc9d0a4b-1315-47a4-8361-c4c75a936897)
+
 
 ### Login Page:
 ![image](https://github.com/user-attachments/assets/3bf1b098-0f67-40aa-bebb-2bc758c105aa)
@@ -78,8 +79,6 @@ npm run start
 ![image](https://github.com/user-attachments/assets/4377e9cb-ac5a-482b-afea-ce7061765bf7)
 
 ## Technology Stack
-
-List and provide a brief overview of the technologies used in the project.
 
 - React.js
 - Node.js
