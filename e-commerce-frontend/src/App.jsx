@@ -34,7 +34,7 @@ const App = () => {
       <AuthProvider>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow">
+          <main className="flex-grow bg-stone-100">
             <Routes>
               <Route path="/" element={<Navigate to="/products" replace />} />
               <Route path="/login" element={<Login />} />

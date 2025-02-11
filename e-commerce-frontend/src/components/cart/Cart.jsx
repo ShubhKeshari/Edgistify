@@ -1,16 +1,16 @@
 // src/components/cart/Cart.js
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import CartItem from './CartItem';
-import { getCart } from '../../services/cart.service';
-import { createOrder } from '../../services/order.service';
-import { useAuth } from '../../context/AuthContext';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import CartItem from "./CartItem";
+import { getCart } from "../../services/cart.service";
+import { createOrder } from "../../services/order.service";
+import { useAuth } from "../../context/AuthContext";
 
 const Cart = () => {
   const [cart, setCart] = useState({ items: [], total: 0 });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [shippingAddress, setShippingAddress] = useState('');
+  const [shippingAddress, setShippingAddress] = useState("");
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -20,14 +20,14 @@ const Cart = () => {
       setCart(response);
       setLoading(false);
     } catch (err) {
-      setError('Failed to fetch cart');
+      setError("Failed to fetch cart");
       setLoading(false);
     }
   };
 
   useEffect(() => {
     if (!user) {
-      navigate('/login');
+      navigate("/login");
       return;
     }
     fetchCart();
@@ -35,7 +35,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     if (!shippingAddress) {
-      alert('Please enter a shipping address');
+      alert("Please enter a shipping address");
       return;
     }
 
@@ -43,13 +43,13 @@ const Cart = () => {
       await createOrder({
         items: cart.items,
         totalPrice: cart.total,
-        shippingAddress
+        shippingAddress,
       });
-      alert('Order placed successfully!');
-      navigate('/orders');
+      alert("Order placed successfully!");
+      navigate("/orders");
     } catch (error) {
-      console.error('Failed to place order:', error);
-      alert('Failed to place order');
+      console.error("Failed to place order:", error);
+      alert("Failed to place order");
     }
   };
 
@@ -72,7 +72,7 @@ const Cart = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">My Cart</h2>
-      
+
       {cart.items.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-600">Your cart is empty</p>
@@ -87,21 +87,22 @@ const Cart = () => {
                 onUpdate={fetchCart}
               />
             ))}
-            
-            <div className="mt-6 border-t pt-6">
+
+            <div className="mt-6 pt-6">
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">
-                  Shipping Address
+                  Shipping Address: 
                 </label>
                 <textarea
                   value={shippingAddress}
                   onChange={(e) => setShippingAddress(e.target.value)}
-                  className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Enter Shipping Adress"
+                  className="mt-1 block w-full border border-blue-500 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none sm:text-sm p-2"
                   rows="3"
                   required
                 />
               </div>
-              
+
               <div className="flex justify-between items-center">
                 <div>
                   <p className="text-lg font-semibold">Total: ₹{cart.total}</p>

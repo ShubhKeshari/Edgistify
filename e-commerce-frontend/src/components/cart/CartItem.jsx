@@ -54,7 +54,7 @@ const CartItem = ({ item, onUpdate }) => {
         </button>
       </div>
       <div className="ml-6">
-        <p className="text-lg font-semibold">${item.product.price * item.quantity}</p>
+        <p className="text-lg font-semibold">₹{item.product.price * item.quantity}</p>
       </div>
       <button
         onClick={handleRemove}
