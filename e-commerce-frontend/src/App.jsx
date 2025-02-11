@@ -1,17 +1,3 @@
-// import { useState } from 'react'
-// import './App.css'
-
-// function App() {
-
-//   return (
-//     <>
-//     </>
-//   )
-// }
-
-// export default App
-
-// src/App.js
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -34,7 +20,7 @@ const App = () => {
       <AuthProvider>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-grow bg-stone-100">
+          <main className="flex-grow bg-[#334155]">
             <Routes>
               <Route path="/" element={<Navigate to="/products" replace />} />
               <Route path="/login" element={<Login />} />

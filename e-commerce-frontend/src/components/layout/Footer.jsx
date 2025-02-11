@@ -1,11 +1,10 @@
-// src/components/layout/Footer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white mt-auto">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">BookBazaar</h3>
@@ -45,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-700 mt-4 pt-4 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} BookBazaar. All rights reserved.</p>
         </div>
       </div>

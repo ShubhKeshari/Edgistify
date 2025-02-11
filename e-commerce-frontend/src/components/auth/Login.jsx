@@ -1,8 +1,8 @@
-// src/components/auth/Login.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { login as loginService } from '../../services/auth.service';
 import { useAuth } from '../../context/AuthContext';
+import { Lock } from 'lucide-react';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -27,77 +27,71 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
-        </h2>
-      </div>
+    <div className="flex items-center justify-center h-[calc(100vh-10rem)]">
+      <div className="w-full max-w-sm px-4">
+        <div className="bg-white rounded-xl shadow-lg p-6">
+          <div className="flex flex-col items-center mb-6">
+            <div className="bg-indigo-100 p-3 rounded-full mb-3">
+              <Lock className="w-6 h-6 text-indigo-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900">Welcome Back</h2>
+            <p className="text-gray-500 text-sm mt-1">
+              Please enter your credentials
+            </p>
+          </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             {error && (
-              <div className="bg-red-50 p-4 rounded-md">
-                <p className="text-red-800">{error}</p>
+              <div className="bg-red-50 border border-red-200 p-3 rounded-lg">
+                <p className="text-sm text-red-600">{error}</p>
               </div>
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email address
               </label>
-              <div className="mt-1">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+              />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
-              <div className="mt-1">
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
-              </div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+              />
             </div>
 
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Sign in
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full py-2.5 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors"
+            >
+              Sign in
+            </button>
           </form>
 
-          <div className="mt-6">
-            <div className="relative">
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">
-                  Don't have an account?{' '}
-                  <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
-                    Register
-                  </Link>
-                </span>
-              </div>
-            </div>
+          <div className="mt-4 text-center text-sm text-gray-500">
+            Don't have an account?{' '}
+            <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+              Create one now
+            </Link>
           </div>
         </div>
       </div>

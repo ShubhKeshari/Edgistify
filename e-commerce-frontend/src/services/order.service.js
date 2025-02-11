@@ -1,4 +1,3 @@
-// src/services/order.service.js
 import api from './api';
 
 export const createOrder = async (orderData) => {

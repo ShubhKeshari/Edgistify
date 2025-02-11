@@ -1,4 +1,3 @@
-// src/services/cart.service.js
 import api from './api';
 
 export const getCart = async () => {
